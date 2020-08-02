@@ -1,4 +1,4 @@
-import webpack from 'webpack';
+import webpack, { HotModuleReplacementPlugin } from 'webpack';
 import WebpackBar from 'webpackbar';
 import baseConfig from './baseConfig';
 
@@ -10,7 +10,7 @@ const clientConfig: webpack.Configuration = {
   output: {
     filename: 'bundle.js',
   },
-  plugins: [new WebpackBar({ name: 'client', color: 'orange' }), new webpack.HotModuleReplacementPlugin()],
+  plugins: [new WebpackBar({ name: 'client', color: 'orange' }), new HotModuleReplacementPlugin()],
 };
 
 export default clientConfig;
