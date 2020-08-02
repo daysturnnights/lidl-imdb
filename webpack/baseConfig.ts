@@ -1,12 +1,12 @@
 import webpack from 'webpack';
-import path from 'path';
+import paths from './paths';
 
 const baseConfig: webpack.Configuration = {
   mode: 'development',
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: paths.dist,
   },
-  context: path.resolve(__dirname, '../src'),
+  context: paths.src,
   module: {
     rules: [
       {
@@ -19,6 +19,9 @@ const baseConfig: webpack.Configuration = {
     extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
     alias: {
       'react-dom': '@hot-loader/react-dom',
+      '@client': paths.client,
+      '@server': paths.server,
+      '@core': paths.core,
     },
   },
 };

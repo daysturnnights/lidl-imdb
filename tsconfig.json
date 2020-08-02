@@ -2,8 +2,18 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "moduleResolution": "node",
     "strict": true,
     "jsx": "react",
-    "baseUrl": "src"
-  }
+    "baseUrl": "./",
+    "paths": {
+      "@client/*": ["src/client/*"],
+      "@server/*": ["src/server/*"],
+      "@core/*": ["src/core/*"]
+    },
+    "noUnusedLocals": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true
+  },
+  "exclude": ["node_modules", "webpack", "dist"]
 }
